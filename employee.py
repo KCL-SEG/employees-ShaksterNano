@@ -37,7 +37,7 @@ class Payment:
     def get_pay(self):
         raise NotImplementedError
 
-    def __str__(self):
+    def get_sentence_part(self):
         raise NotImplementedError
 
 
@@ -49,7 +49,7 @@ class MonthlySalary(Payment):
     def get_pay(self):
         return self.salary
 
-    def __str__(self):
+    def get_sentence_part(self):
         return f"works on a monthly salary of {self.salary}"
 
 
@@ -62,7 +62,7 @@ class HourlyContract(Payment):
     def get_pay(self):
         return self.hours * self.rate
 
-    def __str__(self):
+    def get_sentence_part(self):
         return f"works on a contract of {self.hours} hours at {self.rate}/hour"
 
 
@@ -74,7 +74,7 @@ class BonusCommission(Payment):
     def get_pay(self):
         return self.bonus
 
-    def __str__(self):
+    def get_sentence_part(self):
         return f"receives a bonus commission of {self.bonus}"
 
 
@@ -87,7 +87,7 @@ class ContractCommission(Payment):
     def get_pay(self):
         return self.contracts * self.rate
 
-    def __str__(self):
+    def get_sentence_part(self):
         return f"receives a commission for {self.contracts} contract(s) at {self.rate}/contract"
 
 
