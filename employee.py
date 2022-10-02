@@ -23,9 +23,9 @@ class Employee:
             if i == len(self.payments) - 1:
                 if len(self.payments) > 1:
                     string += "and "
-                string += f"{self.payments[i]}.  Their total pay is {self.get_pay()}."
+                string += f"{self.payments[i].get_sentence_part()}.  Their total pay is {self.get_pay()}."
             else:
-                string += f"{self.payments[i]}"
+                string += f"{self.payments[i].get_sentence_part()}"
                 if i < len(self.payments) - 2:
                     string += ","
                 string += " "
