@@ -55,15 +55,15 @@ class MonthlySalary(Payment):
 
 class HourlyContract(Payment):
 
-    def __init__(self, hours, payment_per_hour):
+    def __init__(self, hours, rate):
         self.hours = hours
-        self.payment_per_hour = payment_per_hour
+        self.rate = rate
 
     def get_pay(self):
-        return self.hours * self.payment_per_hour
+        return self.hours * self.rate
 
     def __str__(self):
-        return f"works on a contract of {self.hours} hours at {self.payment_per_hour}/hour"
+        return f"works on a contract of {self.hours} hours at {self.rate}/hour"
 
 
 class BonusCommission(Payment):
@@ -80,15 +80,15 @@ class BonusCommission(Payment):
 
 class ContractCommission(Payment):
 
-    def __init__(self, contracts, payment_per_contract):
+    def __init__(self, contracts, rate):
         self.contracts = contracts
-        self.payment_per_contract = payment_per_contract
+        self.rate = rate
 
     def get_pay(self):
-        return self.contracts * self.payment_per_contract
+        return self.contracts * self.rate
 
     def __str__(self):
-        return f"receives a commission for {self.contracts} contract(s) at {self.payment_per_contract}/contract"
+        return f"receives a commission for {self.contracts} contract(s) at {self.rate}/contract"
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
